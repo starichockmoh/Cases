@@ -1,0 +1,20 @@
+.Profile{
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+}
+.UserInfo{
+    margin: 10px;
+    background-color: white;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.Statistic {
+    margin: 10px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+}
+.UserInfoSpan{
+    font-weight: bold;
+}

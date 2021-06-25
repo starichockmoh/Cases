@@ -1,25 +1,41 @@
-import logo from './logo.svg';
+import React from "react";
 import './App.css';
+import {HashRouter, withRouter} from "react-router-dom";
+import {connect, Provider} from "react-redux";
+import store from "./BLL/Store";
+import MainLayout from "./Layout";
+import {compose} from "redux";
+import {AuthUser} from "./BLL/Reducers/AuthReducer";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+class App extends React.Component {
+    componentDidMount() {
+        this.props.AuthUser()
+    }
+
+    render() {
+        return (
+            <MainLayout/>
+        )
+    }
 }
 
-export default App;
+let mapStateToProps = (state) => ({
+    avatar: state.Profile.avatar
+})
+const AppContainer =compose(
+    connect(mapStateToProps, {AuthUser}),
+    withRouter,
+)(App)
+
+const CSProject = () => {
+    return <React.StrictMode>
+        <HashRouter>
+            <Provider store={store}>
+                <AppContainer/>
+            </Provider>
+        </HashRouter>
+    </React.StrictMode>
+}
+
+export default CSProject;

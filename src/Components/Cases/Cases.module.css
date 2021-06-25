@@ -1,0 +1,8 @@
+.cases{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+ul{
+    list-style: none;
+}

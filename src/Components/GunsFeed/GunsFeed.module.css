@@ -1,0 +1,22 @@
+li, ul {
+    list-style: none;
+}
+
+.GunsListItem img {
+    width: 100px;
+    height: 100px;
+}
+.GunsList{
+    position: relative;
+    z-index: 2;
+    display: flex;
+}
+.GunsListItem {
+    position: relative;
+    flex-shrink: 0;
+    perspective: 1000px;
+    margin: 10px;
+}
+.GunsFeed{
+    overflow: hidden;
+}

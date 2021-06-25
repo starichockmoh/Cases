@@ -1,0 +1,23 @@
+.CaseInfoImg{
+    width: 300px;
+    height: 300px;
+}
+.CaseInfoSpan{
+    font-weight: bold;
+}
+.CaseInfo{
+    display: grid;
+    grid-template-columns: 2fr 4fr;
+    grid-gap: 2px;
+    margin-left: 50px;
+    margin-right: 50px
+;
+}
+.Guns{
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+}
+.CaseProfile{
+    border-radius: 10px;
+}
